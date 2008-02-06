@@ -1,11 +1,11 @@
 Summary:	Reading and writing config files
 Name:		python-configobj
-Version:	4.4.0
+Version:	4.5.0
 Release:	1
 License:	MIT
 Group:		Libraries/Python
-Source0:	http://downloads.sourceforge.net/configobj/configobj-%{version}.zip
-# Source0-md5:	9d222d8d583b9bdc5b5ecbae1be5177a
+Source0:	http://www.voidspace.org.uk/cgi-bin/voidspace/downman.py?file=configobj-%{version}.zip
+# Source0-md5:	0cc7989083b6030843f6600ca512bc9e
 URL:		http://www.voidspace.org.uk/python/configobj.html
 BuildRequires:	python-devel >= 1:2.3.0
 %pyrequires_eq	python-modules
@@ -30,8 +30,7 @@ python setup.py install \
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
-
-find $RPM_BUILD_ROOT%{py_sitescriptdir} -name "*.py" | xargs rm
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
