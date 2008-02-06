@@ -8,6 +8,7 @@ Source0:	http://www.voidspace.org.uk/cgi-bin/voidspace/downman.py?file=configobj
 # Source0-md5:	0cc7989083b6030843f6600ca512bc9e
 URL:		http://www.voidspace.org.uk/python/configobj.html
 BuildRequires:	python-devel >= 1:2.3.0
+BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
