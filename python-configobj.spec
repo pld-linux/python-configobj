@@ -1,4 +1,5 @@
 Summary:	Reading and writing config files
+Summary(pl.UTF-8):	Odczyt i zapis plików konfiguracyjnych
 Name:		python-configobj
 Version:	4.5.0
 Release:	1
@@ -8,6 +9,7 @@ Source0:	http://www.voidspace.org.uk/cgi-bin/voidspace/downman.py?file=configobj
 # Source0-md5:	0cc7989083b6030843f6600ca512bc9e
 URL:		http://www.voidspace.org.uk/python/configobj.html
 BuildRequires:	python-devel >= 1:2.3.0
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python-modules
 BuildArch:	noarch
@@ -16,16 +18,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Reading and writing config files.
 
+%description -l pl.UTF-8
+Odczyt i zapis plików konfiguracyjnych.
+
 %prep
 %setup -q -n configobj-%{version}
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
+%{__python} setup.py install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
