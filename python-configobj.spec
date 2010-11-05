@@ -1,12 +1,12 @@
 Summary:	Reading and writing config files
 Summary(pl.UTF-8):	Odczyt i zapis plików konfiguracyjnych
 Name:		python-configobj
-Version:	4.5.3
-Release:	3
+Version:	4.7.2
+Release:	1
 License:	MIT
 Group:		Libraries/Python
-Source0:	http://dl.sourceforge.net/configobj/configobj-%{version}.zip
-# Source0-md5:	abd4eec2ff08bea466018bccdcf91aab
+Source0:	http://downloads.sourceforge.net/configobj/configobj-%{version}.zip
+# Source0-md5:	51cee395cfbf831339b03f72706de18e
 URL:		http://www.voidspace.org.uk/python/configobj.html
 BuildRequires:	python-devel >= 1:2.3.0
 BuildRequires:	rpm-pythonprov
