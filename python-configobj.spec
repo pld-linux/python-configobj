@@ -10,7 +10,7 @@ Source0:	https://github.com/DiffSK/configobj/archive/%{version}.tar.gz
 URL:		https://github.com/DiffSK/configobj
 BuildRequires:	python-devel >= 1:2.3.0
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	unzip
 Requires:	python-modules
 BuildArch:	noarch
