@@ -46,6 +46,7 @@ Summary:	Reading and writing config files
 Summary(pl.UTF-8):	Odczyt i zapis plików konfiguracyjnych
 Group:		Libraries/Python
 Requires:	python3-modules
+Requires:	python3-six
 
 %description -n python3-%{module}
 Reading and writing config files.
