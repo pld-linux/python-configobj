@@ -2,7 +2,8 @@
 # Pollutes module namespace by
 # %{py_sitescriptdir}/_version.py*
 
-%define         module  configobj
+%define 	module		configobj
+%define 	egg_name	configobj
 Summary:	Reading and writing config files
 Summary(pl.UTF-8):	Odczyt i zapis plików konfiguracyjnych
 Name:		python-configobj
@@ -37,21 +38,18 @@ Odczyt i zapis plików konfiguracyjnych.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %py_install
-
-%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
-%py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_postclean
+
+# Seems not be needed:
+%{__rm} $RPM_BUILD_ROOT%{py_sitescriptdir}/validate.py*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{py_sitescriptdir}/configobj.py*
-# Import error without _version.p
-%{py_sitescriptdir}/_version.py*
-# Seems not be needed:
-## %{py_sitescriptdir}/validate.py*
-%{py_sitescriptdir}/%{module}-%{version}-py*.egg-info
+%{py_sitescriptdir}/%{module}.py[co]
+# Import error without _version.py
+%{py_sitescriptdir}/_version.py[co]
+%{py_sitescriptdir}/%{egg_name}-%{version}-py*.egg-info
