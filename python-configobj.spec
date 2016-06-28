@@ -1,6 +1,7 @@
 # NOTE:
 # Pollutes module namespace by
-# %{py_sitescriptdir}/_version.py*
+# %{py*_sitescriptdir}/_version.py*
+# %{py*_sitescriptdir}/validate.py*
 
 #
 # Conditional build:
@@ -71,16 +72,10 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %py_install
 %py_postclean
-
-# Seems not be needed:
-%{__rm} $RPM_BUILD_ROOT%{py_sitescriptdir}/validate.py*
 %endif
 
 %if %{with python3}
 %py3_install
-# Seems not be needed:
-%{__rm} $RPM_BUILD_ROOT%{py3_sitescriptdir}/validate.py
-%{__rm} $RPM_BUILD_ROOT%{py3_sitescriptdir}/__pycache__/validate.*
 %endif
 
 %clean
@@ -92,6 +87,8 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/%{module}.py[co]
 # Import error without _version.py
 %{py_sitescriptdir}/_version.py[co]
+# from validate import VdtMissingValue
+%{py_sitescriptdir}/validate.py[co]
 %{py_sitescriptdir}/%{egg_name}-%{version}-py*.egg-info
 %endif
 
@@ -103,5 +100,8 @@ rm -rf $RPM_BUILD_ROOT
 # Import error without _version.py
 %{py3_sitescriptdir}/_version.py
 %{py3_sitescriptdir}/__pycache__/_version.*.pyc
+# from validate import VdtMissingValue
+%{py3_sitescriptdir}/validate.py
+%{py3_sitescriptdir}/__pycache__/validate.*.pyc
 %{py3_sitescriptdir}/%{egg_name}-%{version}-py*.egg-info
 %endif
