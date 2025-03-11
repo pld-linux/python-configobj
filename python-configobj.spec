@@ -14,7 +14,7 @@ Summary:	Reading and writing config files
 Summary(pl.UTF-8):	Odczyt i zapis plików konfiguracyjnych
 Name:		python-configobj
 Version:	5.0.6
-Release:	10
+Release:	11
 License:	MIT
 Group:		Libraries/Python
 ## Source0:	https://github.com/DiffSK/configobj/archive/%{version}.tar.gz
